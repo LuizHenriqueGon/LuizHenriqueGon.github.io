@@ -1,0 +1,213 @@
+:root {
+    --bg-color: #0a0a0a;
+    --primary-color: #00ffff; /* Cyan Neon */
+    --secondary-color: #ff00ff; /* Magenta Neon */
+    --text-color: #dcdcdc;
+    --container-bg: rgba(16, 16, 16, 0.88);
+    --border-glow: 0 0 8px var(--primary-color), 0 0 15px var(--primary-color);
+    --font-family: 'Roboto Mono', monospace;
+}
+
+body {
+    background-color: var(--bg-color);
+    background-image: url('../img/background.jpg'); 
+    background-size: cover;
+    background-attachment: fixed;
+    color: var(--text-color);
+    font-family: var(--font-family);
+    line-height: 1.7;
+}
+
+.main-container {
+    border: 2px solid var(--primary-color);
+    box-shadow: var(--border-glow);
+    background-color: var(--container-bg);
+    backdrop-filter: blur(8px);
+    animation: flicker 4s infinite alternate;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding: 2rem;
+}
+
+header {
+    text-align: center;
+    border-bottom: 1px dashed var(--secondary-color);
+    padding-bottom: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.glitch {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    position: relative;
+    text-shadow: 0 0 5px var(--primary-color);
+    letter-spacing: 2px;
+}
+
+/* --- ESTILO DA BARRA DE NAVEGAÇÃO (AJUSTADO) --- */
+.navbar-nav .nav-link {
+    color: var(--primary-color);
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 5px 10px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+    padding: 0.5rem 1rem; /* Garante o formato de "quadrado" */
+    border-radius: 0; /* Cantos retos */
+}
+
+/* Efeito ao passar o mouse */
+.navbar-nav .nav-link:hover {
+    color: #000;
+    background-color: var(--primary-color);
+    box-shadow: var(--border-glow);
+}
+
+/* Estilo do botão ATIVO (página atual) */
+.navbar-nav .nav-link.active {
+    color: #000; /* Cor do texto preta para contraste */
+    background-color: var(--primary-color); /* O "quadrado azul" */
+    box-shadow: var(--border-glow);
+}
+/* --- FIM DO ESTILO DA BARRA DE NAVEGAÇÃO --- */
+
+section {
+    padding: 2.5rem 1rem;
+    margin-bottom: 2rem;
+    border-left: 3px solid var(--secondary-color);
+    background: rgba(10, 10, 10, 0.5);
+}
+
+.section-title {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.profile-pic {
+    max-width: 180px;
+    border: 2px solid var(--secondary-color);
+    box-shadow: 0 0 10px var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.social-links .btn-neon {
+    color: var(--text-color);
+    border: 1px solid var(--secondary-color);
+    padding: 10px 20px;
+    text-decoration: none;
+    margin: 5px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    background: transparent;
+}
+
+.social-links .btn-neon:hover {
+    color: var(--bg-color);
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 8px var(--secondary-color);
+}
+
+.skill-item {
+    text-align: center;
+    padding: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.skill-item i {
+    font-size: 4rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.skill-item:hover i {
+    color: var(--secondary-color);
+    text-shadow: 0 0 10px var(--secondary-color);
+}
+
+.skill-item p {
+    margin-top: 0.5rem;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.project-card {
+    background-color: rgba(26, 26, 26, 0.7);
+    border: 1px solid #333;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    transition: box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.5);
+}
+
+.project-image {
+    width: 100%;
+    max-width: 250px;
+    border: 1px solid var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.project-info h3 {
+    color: var(--secondary-color);
+    margin-top: 0;
+}
+
+.project-info a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.certificate-item a {
+    background-color: rgba(26, 26, 26, 0.7);
+    border: 1px solid #333;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    display: block;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: all 0.2s ease-in-out;
+}
+
+.certificate-item a:hover {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    transform: translateX(5px);
+}
+
+.certificate-item a::after {
+    content: ' >_';
+    color: var(--secondary-color);
+    float: right;
+}
+
+footer {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px dashed var(--secondary-color);
+    font-size: 0.9rem;
+    color: #888;
+}
+
+/* Animações */
+@keyframes flicker {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% { box-shadow: 0 0 8px var(--primary-color), 0 0 15px var(--primary-color), 0 0 25px #0ff; }
+  20%, 24%, 55% { box-shadow: none; }
+}
+
+@keyframes glitch-anim-1 {
+  0% { clip-path: inset(15% 0 85% 0); } 20% { clip-path: inset(40% 0 40% 0); } 40% { clip-path: inset(80% 0 10% 0); } 60% { clip-path: inset(30% 0 50% 0); } 80% { clip-path: inset(55% 0 20% 0); } 100% { clip-path: inset(10% 0 70% 0); }
+}
+
+@keyframes glitch-anim-2 {
+  0% { clip-path: inset(75% 0 15% 0); } 20% { clip-path: inset(20% 0 50% 0); } 40% { clip-path: inset(90% 0 5% 0); } 60% { clip-path: inset(45% 0 45% 0); } 80% { clip-path: inset(70% 0 10% 0); } 100% { clip-path: inset(30% 0 60% 0); }
+}
